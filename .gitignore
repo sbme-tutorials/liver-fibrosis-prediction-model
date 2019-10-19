@@ -1,0 +1,13 @@
+build/
+.directory
+**/*.bbl
+**/*.aux
+**/*.blg
+**/*.bcf
+**/*.out
+**/*.log
+**/*.nav
+**/*.toc
+**/*.snm
+**/*.run.xml
+**/*.synctex.gz
