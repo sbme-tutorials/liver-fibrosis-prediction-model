@@ -116,7 +116,7 @@ We have great enthusiasm for this project because it meets our research interest
 Moreover, the data we will work on is collected from Egyptian patients and this relevancy makes us even more enthusiastic.
 
 \section{Problem Statement}
-
+We are building a machine learning model that is capable of predicting the stage of fibrosis that a HCV patient could catch after 48 weeks treatment .    
 \section{Resources}
 
 What resources are you going to use (datasets, computer hardware, computational tools, etc.)?
@@ -128,17 +128,24 @@ What resources are you going to use (datasets, computer hardware, computational 
 \subsubsection{Data variation}
 Exploring patterns of variation, typical values and outliers is an important task. We can gain such knowledge by visualizing the variables' distributions. To examine the distribution of a categorical variable, we can use a bar chart. And for continuous variables, histograms and frequency polygons can be used. To overcome binning bias of histogram and display all data, we can use swarm plots.
 \subsubsection{Co-variance}
-It's  important to study the behavior between variables to gain useful insights that can be useful for feature selection. To  examine the covariance between categorical and continuous variables we can use boxplot or violin plot. If both variables we are interested in are categorical we can use heatmap or scatterplot. If both are continuous, heatmaps can be used.
+It's  important to study the behavior between variables to gain useful insights that can be useful for feature selection. To  examine the covariance between categorical and continuous variables we can use boxplot or violin plot. If both variables we are interested in are categorical we can use heatmap or scatterplot. If both are continuous, heatmaps can be used. Measuring the central tendency -mean and median for numerical data and mode for categorical- and measuring spread of data  . Examining relationships - plotting for numerical and two-way-cross-tabulations for categorical  .
+
+
 \subsection{Data Preparation}
 \subsubsection{Feature scaling} 
 Using a normalization technique (Z-score or min-max normalization) to avoid skew towards high magnitude features.
+\subsubsection{Feature Engineering} 
+Categorical variables encoding and numerical variables engineering .
+\subsubsection{Feature selection} 
+Through removing redundant features , checking for correlated features and training the model with feature selection and using PCA.
 \subsection{Modeling}
+We are going to use Decision Tree and Naive Bayes for modeling and testing which one is more accurate . We may use LDA for dimensionality reduction . If we have the time we could test further methods (of course that doesn't include binary methods ) .
 \subsection{Evaluation}
 What would the successful outcome of your project look like? In other words, under which circumstances would you consider your project to be “successful?”
 
 How do you measure success, specific to this project, from a technical standpoint?
 \subsection{Deployment}
-
+This work is done if we have the time for it . We are going to make it through API .
 
 \section{Milestones and Contributions}
 \begin{table}[h]
