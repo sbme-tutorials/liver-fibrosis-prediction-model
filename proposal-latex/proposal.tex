@@ -84,7 +84,10 @@ Exploring patterns of variation, typical values and outliers is an important tas
 It's important to study the behavior between variables to gain useful insights that can be useful for feature selection. To examine the covariance between categorical and continuous variables we can use a boxplot or violin plot. If both variables we are interested in are categorical we can use heatmap or scatterplot. If both are continuous, heatmaps can be used. Measuring the central tendency mean and median for numerical data and mode for categorical- and measuring spread of data. Examining relationships - plotting for numerical and two-way-cross-tabulations for categorical.
 
 
-\subsection{Data Preparation}
+\subsection{Data Pre-processing}
+
+\subsubsection{Discretization} 
+Discretization  is the process of transforming continuous variables into categories. The importance of discretization  is that it helps handling outliers by placing these values into the lower or higher intervals together with the remaining inlier values of the distribution. We will do discretization  guided by the file attached to the \href{https://archive.ics.uci.edu/ml/datasets/Hepatitis+C+Virus+\%28HCV\%29+for+Egyptian+patients}{dataset}.
 
 \subsubsection{Feature scaling} 
 Using a normalization technique (Z-score or min-max normalization) to avoid skew towards high magnitude features.
