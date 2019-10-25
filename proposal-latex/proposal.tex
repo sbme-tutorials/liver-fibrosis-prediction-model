@@ -12,7 +12,8 @@
 % If you comment hyperref and then uncomment it, you should delete
 % egpaper.aux before re-running latex.  (Or just hit 'q' on the first latex
 % run, let it finish, and you should be clear).
-\usepackage[breaklinks=true,bookmarks=false]{hyperref}
+\usepackage[breaklinks=true,bookmarks=false,colorlinks=true,
+    urlcolor=blue]{hyperref}
 
 
 \statcoursefinalcopy
@@ -73,41 +74,7 @@ We will be  building a machine learning model that is capable of predicting the 
 
 \section{Resources}
 
-Most of our work will be based on a \href{https://archive.ics.uci.edu/ml/datasets/Hepatitis+C+Virus+\%28HCV\%29+for+Egyptian+patients}{dataset} provided by the University of Ain Shams that includes data about Hepatitis C Virus (HCV) for Egyptian patients. Key attributes and possible values will be outlined below
-
-\begin{itemize}
-	\item Age
-	\item Gender
-	\item BMI (Body Mass Index)
-	\item Fever
-	\item Nausea/Vomiting
-	\item Headache
-	\item Diarrhea
-	\item Fatigue/Generalized bone ache
-	\item Jaundice
-	\item Epigastric pain
-	\item WBC (White blood cell count)
-	\item RBC (Red blood cells count)
-	\item HGB (Hemoglobin reading of patient)
-	\item Plat (Platelet count of patient)
-	\item AST 1 (aspartate transaminase ratio)
-	\item ALT 1 (alanine transaminase ratio after 1 week)
-	\item ALT 4 (alanine transaminase ratio after 4 weeks)
-	\item ALT 12 (alanine transaminase ratio after 4 weeks)
-	\item ALT 24 (alanine transaminase ratio after 24 weeks)
-	\item ALT 36 (alanine transaminase ratio after 36 weeks)
-	\item ALT 48 (alanine transaminase ratio after 48 weeks)
-	\item ALT after 24 w alanine transaminase ratio 24 weeks
-	\item RNA Base 
-	\item RNA 4 
-	\item RNA 12
-	\item RNA EOT (RNA at end-of-treatment)
-	\item RNA EF (RNA Elongation Factor)
-	\item Baseline histological Grading (at start of treatment)
-	\item Baseline histological staging (at end of treatment)
-\end{itemize}
-
-Visualization of data will be handled by ggplot2, an R library. 
+Our work will be based on the \href{https://archive.ics.uci.edu/ml/datasets/Hepatitis+C+Virus+\%28HCV\%29+for+Egyptian+patients}{dataset} provided by the University of Ain Shams that includes data about Hepatitis C Virus (HCV) for Egyptian patients. Key attributes and possible values can be found in the link. EDA, Data Visualization, Pre-processing and modeling will be handled by the suitable R libraries.
 
 \section{Methodology}
 \subsection{Exploratory Data Analysis }
