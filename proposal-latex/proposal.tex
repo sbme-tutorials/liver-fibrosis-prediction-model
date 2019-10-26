@@ -86,8 +86,9 @@ It's important to study the behavior between variables to gain useful insights t
 
 \subsection{Data Pre-processing}
 
-\subsubsection{Discretization} 
-Discretization  is the process of transforming continuous variables into categories. The importance of discretization  is that it helps handling outliers by placing these values into the lower or higher intervals together with the remaining inlier values of the distribution. We will do discretization  guided by the file attached to the \href{https://archive.ics.uci.edu/ml/datasets/Hepatitis+C+Virus+\%28HCV\%29+for+Egyptian+patients}{dataset}.
+\subsubsection{Discretization}
+ 
+Discretization is the process of transforming continuous data into categorical data. The importance of discretization is that it helps handling outliers by placing these values into the lower or higher intervals together with the remaining inlying values of the distribution. Our discretization will be handled by the file attached to the \href{https://archive.ics.uci.edu/ml/datasets/Hepatitis+C+Virus+\%28HCV\%29+for+Egyptian+patients}{dataset}.
 
 \subsubsection{Feature scaling} 
 Using a normalization technique (Z-score or min-max normalization) to avoid skew towards high magnitude features.
@@ -104,11 +105,17 @@ We will be using both Decision Tree and Naive Bayes for our model and testing wh
 \subsection{Evaluation}
 Evaluation of our model will be done through comparing the actual outcome grading to the predicted class grading. In other words, our main measure of success will depend on the accuracy of our prediction model and it's ability to correct it's predictions with time.
 
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.6]{figures/eval.png}
+	\caption{Machine learning model development and evaluation workflow \cite{oreillyML}}		
+\end{figure}
+
 \subsection{Deployment}
 We plan on offering our predictions through an API to be designed later on once our algorithm is completed and working as planned.
 
 \section{Milestones and Contributions}
-\begin{table}[h]
+\begin{table}[h!]
 \begin{tabular}{ccc}
 \hline
 \textbf{Milestone}                            & \textbf{Date}  & \textbf{Contributor}      \\ \hline
