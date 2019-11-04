@@ -13,7 +13,7 @@
 % egpaper.aux before re-running latex.  (Or just hit 'q' on the first latex
 % run, let it finish, and you should be clear).
 \usepackage[breaklinks=true,bookmarks=false,colorlinks=true,
-    urlcolor=blue]{hyperref}
+urlcolor=blue]{hyperref}
 
 
 \statcoursefinalcopy
@@ -21,110 +21,118 @@
 
 \setcounter{page}{1}
 \begin{document}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% DO NOT EDIT ANYTHING ABOVE THIS LINE
-% EXCEPT IF YOU LIKE TO USE ADDITIONAL PACKAGES
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-%%%%%%%%% TITLE
-\title{Prediction Model for Fibrosis Stages in HCV Patients}
-
-\author{Ali Gamal\\
-{\tt\small aly.elgaml98@eng-st.cu.edu.eg}
-\and
-Khaled Maher\\
-{\tt\small khaled.bedda98@eng-st.cu.edu.eg}
-\and
-Nada Ashraf\\
-{\tt\small Nada.Ibrahim98@eng-st.cu.edu.eg}
-}
-
-\maketitle
-%\thispagestyle{empty}
-
-
-
-% MAIN ARTICLE GOES BELOW
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-%%%%%%%%% BODY TEXT
-
-
-\section{Introduction}
-
-Hepatitis C is a serious and potentially life-threatening condition caused by the hepatitis C virus (HCV) that primarily affects the liver.  During the initial infection people often have mild or no symptoms so it’s possible that you may be infected for many years before you’re diagnosed as the virus persists in the liver in about 75\% to 85\% of those initially infected.  Possible symptoms include fever, dark urine, abdominal pain, and yellow tinged skin. Over many years however, it often leads to liver disease and occasionally cirrhosis. \cite{ray2004sherris}
-
-There is no vaccine against hepatitis C. An estimated 143 million people (2\%) worldwide are infected with hepatitis C as of 2015. In 2013 about 11 million new cases occurred.[11] It occurs most commonly in Africa and Central and East Asia. About 167,000 deaths due to liver cancer and 326,000 deaths due to cirrhosis occurred in 2015 due to hepatitis C. \cite{forouzanfar2016global}
-
-Due to the large population of patients, our efforts will be concentrated on creating a prediction model using Machine Learning to correctly determine the stage of fibrosis of an HCV patient after an arbitrary period of treatment. This will mainly depend on various methods that will be outlined below in the Methodology section.
-
-\section{Motivation}
-Data science is an absorbing domain. Transforming raw data into meaningful insights is a powerful tool for biomedical engineers and their advancement of technologies.
-We have great enthusiasm for this project because it meets our research interests and will provide us a great opportunity to learn new skills and dive into the larger world of data science \& analysis.
-Moreover, the data we will work on is collected from Egyptian patients and this relevancy makes us even more enthusiastic to fulfill our task.
-
-\section{Problem Statement}
-We will be  building a machine learning model that is capable of predicting the stage of fibrosis that a HCV patient could catch after 48 weeks treatment.    
-
-\section{Resources}
-
-Our work will be based on the \href{https://archive.ics.uci.edu/ml/datasets/Hepatitis+C+Virus+\%28HCV\%29+for+Egyptian+patients}{dataset} provided by the University of Ain Shams that includes data about Hepatitis C Virus (HCV) for Egyptian patients. Key attributes and possible values can be found in the link. EDA, Data Visualization, Pre-processing and modeling will be handled by the suitable R libraries.
-
-\section{Methodology}
-\subsection{Exploratory Data Analysis }
-\subsubsection{Data variation}
-Exploring patterns of variation, typical values and outliers is an important task. We can gain such knowledge by visualizing the variables' distributions. To examine the distribution of a categorical variable, we can use a bar chart. And for continuous variables, histograms and frequency polygons can be used. To overcome binning bias of histogram and display all data, we can use swarm plots.
-\subsubsection{Co-variance}
-It's important to study the behavior between variables to gain useful insights that can be useful for feature selection. To examine the covariance between categorical and continuous variables we can use a boxplot or violin plot. If both variables we are interested in are categorical we can use heatmap or scatterplot. If both are continuous, heatmaps can be used. Measuring the central tendency mean and median for numerical data and mode for categorical- and measuring spread of data. Examining relationships - plotting for numerical and two-way-cross-tabulations for categorical.
-
-
-\subsection{Data Pre-processing}
-
-\subsubsection{Discretization} 
-Discretization  is the process of transforming continuous variables into categories. The importance of discretization  is that it helps handling outliers by placing these values into the lower or higher intervals together with the remaining inlier values of the distribution. We will do discretization  guided by the file attached to the \href{https://archive.ics.uci.edu/ml/datasets/Hepatitis+C+Virus+\%28HCV\%29+for+Egyptian+patients}{dataset}.
-
-\subsubsection{Feature scaling} 
-Using a normalization technique (Z-score or min-max normalization) to avoid skew towards high magnitude features.
-
-\subsubsection{Feature Engineering} 
-Categorical variables encoding and numerical variables engineering.
-
-\subsubsection{Feature selection} 
-Through removing redundant features, checking for correlated features and training the model with feature selection and using PCA.
-
-\subsection{Modeling}
-We will be using both Decision Tree and Naive Bayes for our model and testing which one is more accurate. We may use LDA for dimensionality reduction. Should we have the time we may test further methods (not including binary methods).
-
-\subsection{Evaluation}
-Evaluation of our model will be done through comparing the actual outcome grading to the predicted class grading. In other words, our main measure of success will depend on the accuracy of our prediction model and it's ability to correct it's predictions with time.
-
-\subsection{Deployment}
-We plan on offering our predictions through an API to be designed later on once our algorithm is completed and working as planned.
-
-\section{Milestones and Contributions}
-\begin{table}[h]
-\begin{tabular}{ccc}
-\hline
-\textbf{Milestone}                            & \textbf{Date}  & \textbf{Contributor}      \\ \hline
-\textit{\textbf{EDA}}                         & 29 Oct - 2 Nov & Khaled Maher                     \\
-\textit{\textbf{Pre-Processing}}              & 3 - 8 Nov      & Ali Gamal                   \\
-\textit{\textbf{Model Building}}              & 9 - 15 Nov     & Nada Ashraf                 \\
-\textit{\textbf{Model Evaluation}}            & 16 - 18 Nov    & Ali Gamal                 \\
-\textit{\textbf{Model Improvement}}           & 1 - 7 Dec      & Khaled Maher                 \\
-\textit{\textbf{Deployment}}                  & 8 - 10 Dec     & Nada Ashraf                \\
-\textit{\textbf{Documentation and Publicity}} & 11 - 13 Dec    & Ali Gamal                  \\ \hline
-\end{tabular}
-\end{table}
-
-{\small
-\bibliographystyle{IEEEtran}
-\bibliography{bibliography}
-}
-
+	
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% DO NOT EDIT ANYTHING ABOVE THIS LINE
+	% EXCEPT IF YOU LIKE TO USE ADDITIONAL PACKAGES
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	
+	
+	%%%%%%%%% TITLE
+	\title{Prediction Model for Fibrosis Stages in HCV Patients}
+	
+	\author{Ali Gamal\\
+		{\tt\small aly.elgaml98@eng-st.cu.edu.eg}
+		\and
+		Khaled Maher\\
+		{\tt\small khaled.bedda98@eng-st.cu.edu.eg}
+		\and
+		Nada Ashraf\\
+		{\tt\small Nada.Ibrahim98@eng-st.cu.edu.eg}
+	}
+	
+	\maketitle
+	%\thispagestyle{empty}
+	
+	
+	
+	% MAIN ARTICLE GOES BELOW
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	
+	
+	%%%%%%%%% BODY TEXT
+	
+	
+	\section{Introduction}
+	
+	Hepatitis C is a serious and potentially life-threatening condition caused by the hepatitis C virus (HCV) that primarily affects the liver.  During the initial infection people often have mild or no symptoms so it’s possible that you may be infected for many years before you’re diagnosed as the virus persists in the liver in about 75\% to 85\% of those initially infected.  Possible symptoms include fever, dark urine, abdominal pain, and yellow tinged skin. Over many years however, it often leads to liver disease and occasionally cirrhosis. \cite{ray2004sherris}
+	
+	There is no vaccine against hepatitis C. An estimated 143 million people (2\%) worldwide are infected with hepatitis C as of 2015. In 2013 about 11 million new cases occurred.[11] It occurs most commonly in Africa and Central and East Asia. About 167,000 deaths due to liver cancer and 326,000 deaths due to cirrhosis occurred in 2015 due to hepatitis C. \cite{forouzanfar2016global}
+	
+	Due to the large population of patients, our efforts will be concentrated on creating a prediction model using Machine Learning to correctly determine the stage of fibrosis of an HCV patient after an arbitrary period of treatment. This will mainly depend on various methods that will be outlined below in the Methodology section.
+	
+	\section{Motivation}
+	Data science is an absorbing domain. Transforming raw data into meaningful insights is a powerful tool for biomedical engineers and their advancement of technologies.
+	We have great enthusiasm for this project because it meets our research interests and will provide us a great opportunity to learn new skills and dive into the larger world of data science \& analysis.
+	Moreover, the data we will work on is collected from Egyptian patients and this relevancy makes us even more enthusiastic to fulfill our task.
+	
+	\section{Problem Statement}
+	We will be  building a machine learning model that is capable of predicting the stage of fibrosis that a HCV patient could catch after 48 weeks treatment.    
+	
+	\section{Resources}
+	
+	Our work will be based on the \href{https://archive.ics.uci.edu/ml/datasets/Hepatitis+C+Virus+\%28HCV\%29+for+Egyptian+patients}{dataset} provided by the University of Ain Shams that includes data about Hepatitis C Virus (HCV) for Egyptian patients. Key attributes and possible values can be found in the link. EDA, Data Visualization, Pre-processing and modeling will be handled by the suitable R libraries.
+	
+	\section{Methodology}
+	\subsection{Exploratory Data Analysis }
+	\subsubsection{Data variation}
+	Exploring patterns of variation, typical values and outliers is an important task. We can gain such knowledge by visualizing the variables' distributions. To examine the distribution of a categorical variable, we can use a bar chart. And for continuous variables, histograms and frequency polygons can be used. To overcome binning bias of histogram and display all data, we can use swarm plots.
+	\subsubsection{Co-variance}
+	It's important to study the behavior between variables to gain useful insights that can be useful for feature selection. To examine the covariance between categorical and continuous variables we can use a boxplot or violin plot. If both variables we are interested in are categorical we can use heatmap or scatterplot. If both are continuous, heatmaps can be used. Measuring the central tendency mean and median for numerical data and mode for categorical- and measuring spread of data. Examining relationships - plotting for numerical and two-way-cross-tabulations for categorical.
+	
+	
+	\subsection{Data Pre-processing}
+	
+	\subsubsection{Discretization}
+	
+	Discretization is the process of transforming continuous data into categorical data. The importance of discretization is that it helps handling outliers by placing these values into the lower or higher intervals together with the remaining inlying values of the distribution. Our discretization will be handled by the file attached to the \href{https://archive.ics.uci.edu/ml/datasets/Hepatitis+C+Virus+\%28HCV\%29+for+Egyptian+patients}{dataset}.
+	
+	\subsubsection{Feature scaling} 
+	Using a normalization technique (Z-score or min-max normalization) to avoid skew towards high magnitude features.
+	
+	\subsubsection{Feature Engineering} 
+	Categorical variables encoding and numerical variables engineering.
+	
+	\subsubsection{Feature selection} 
+	Through removing redundant features, checking for correlated features and training the model with feature selection and using PCA.
+	
+	\subsection{Modeling}
+	We will be using both Decision Tree and Naive Bayes for our model and testing which one is more accurate. We may use LDA for dimensionality reduction. Should we have the time we may test further methods (not including binary methods).
+	
+	\subsection{Evaluation}
+	Evaluation of our model will be done through comparing the actual outcome grading to the predicted class grading. In other words, our main measure of success will depend on the accuracy of our prediction model and it's ability to correct it's predictions with time.
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=0.6]{figures/eval.png}
+		\caption{Machine learning model development and evaluation workflow \cite{oreillyML}}		
+	\end{figure}
+	
+	\subsection{Deployment}
+	We plan on offering our predictions through an API to be designed later on once our algorithm is completed and working as planned.
+	
+	\section{Milestones and Contributions}
+	\begin{table}[h!]
+		\begin{tabular}{ccc}
+			\hline
+			\textbf{Milestone}                            & \textbf{Date}  & \textbf{Contributor}      \\ \hline
+			\textit{\textbf{EDA}}                         & 29 Oct - 2 Nov & Khaled Maher                     \\
+			\textit{\textbf{Pre-Processing}}              & 3 - 8 Nov      & Ali Gamal                   \\
+			\textit{\textbf{Model Building}}              & 9 - 15 Nov     & Nada Ashraf                 \\
+			\textit{\textbf{Model Evaluation}}            & 16 - 18 Nov    & Ali Gamal                 \\
+			\textit{\textbf{Model Improvement}}           & 1 - 7 Dec      & Khaled Maher                 \\
+			\textit{\textbf{Deployment}}                  & 8 - 10 Dec     & Nada Ashraf                \\
+			\textit{\textbf{Documentation and Publicity}} & 11 - 13 Dec    & Ali Gamal                  \\ \hline
+		\end{tabular}
+	\end{table}
+	
+	{\small
+		
+		\bibliographystyle{IEEEtran}
+		\bibliography{bibliography}
+	}
+	
 \end{document}
