@@ -17,7 +17,6 @@ discretize <- function(data, column_name, A, B) {
                                    cut(data[[column_name]],
                                        breaks = c(A),
                                        labels = c(B)))
-  return(hcv_dis)
 }
 
 
@@ -31,9 +30,13 @@ discretize(hcv_data,"BMI",c(0,18.5,25,30,35,40), c(1,2,3,4,5))
 discretize(hcv_data,"RBC",c(0,3000000,5000000,5018451),c(1,2,3))
 discretize(hcv_data,"Plat",c(93013, 100000,255000,226465),c(1,2,3))
 discretize(hcv_data,"AST.1",c(0,20,40,128),c(1,2,3))
-discretize(hcv_data,"ALT.1",c(0,20,40,128),c(1,2,3))
-discretize(hcv_data,"ALT.4",c(0,20,40,128),c(1,2,3))
+discretize(hcv_data,"ALT4",c(0,20,40,128),c(1,2,3))
 discretize(hcv_data,"ALT.12",c(0,20,40,128),c(1,2,3))
 discretize(hcv_data,"ALT.24",c(0,20,40,128),c(1,2,3))
 discretize(hcv_data,"ALT.36",c(0,20,40,128),c(1,2,3))
 discretize(hcv_data,"ALT.48",c(0,20,40,128),c(1,2,3))
+discretize(hcv_data,"RNA.Base",c(0,5,1201086),c(1,2))
+discretize(hcv_data,"RNA.4",c(0,5,1201715),c(1,2))
+discretize(hcv_data,"RNA.12",c(0,5,3731527),c(1,2))
+discretize(hcv_data,"RNA.EOT",c(0,5,808450),c(1,2))
+discretize(hcv_data,"RNA.EF",c(0,5,808450),c(1,2))
