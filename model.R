@@ -27,3 +27,5 @@ discretize(hcv_data,
            c(0, 32, 37, 42, 47, 52, 57, 62),
            c(1, 2, 3, 4, 5, 6, 7))
 
+discretize(hcv_data,"BMI",c(0,18.5,25,30,35,40), c(1,2,3,4,5))
+discretize(hcv_data,"RBC",c(0,3000000,5000000,5018451),c(1,2,3))
