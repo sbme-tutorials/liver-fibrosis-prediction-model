@@ -8,15 +8,14 @@ colnames(hcv_data)
 library(dplyr)
 
 # Discretization
+hcv_data_dis <- data.table::copy(hcv_data)
 discretize <- function(data, column_name, A, B) {
   column_sym <- rlang::sym(column_name)
-  hcv_dis <<- hcv_dis %>% mutate(!!column_sym :=
+  hcv_data_dis <<- hcv_data_dis %>% mutate(!!column_sym :=
                                    cut(data[[column_name]],
                                        breaks = c(A),
                                        labels = c(B)))
 }
-
-
 discretize(hcv_data, "WBC", c(0, 4000, 11000, 12101), c(1, 2, 3))
 discretize(hcv_data,
            "Age",
