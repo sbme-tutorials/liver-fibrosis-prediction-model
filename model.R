@@ -6,14 +6,10 @@ colnames(hcv_data)
 
 # Load libraries
 library(dplyr)
-library(arules)
-library(rlang) # for sym()
-
 
 # Discretization
-
 discretize <- function(data, column_name, A, B) {
-  column_sym <- sym(column_name)
+  column_sym <- rlang::sym(column_name)
   hcv_dis <<- hcv_dis %>% mutate(!!column_sym :=
                                    cut(data[[column_name]],
                                        breaks = c(A),
