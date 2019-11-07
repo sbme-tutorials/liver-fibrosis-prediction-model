@@ -6,12 +6,19 @@ head(hcv_data)
 # Load libraries
 library(dplyr)
 library(arules)
+library(rlang) # for sym()
 
 # Discretization
-# WBC
-hcv_dis <- hcv_data %>% mutate (WBC =
-                                  cut(
-                                    WBC,
-                                    breaks = c(0, 4000, 11000, 12101),
-                                    labels = c(1, 2, 3)
-                                  ))
+
+discretize <- function(feature,column_name,A,B) {
+  column_sym <- sym(column_name)
+  hcv_dis <<- hcv_data %>% mutate(!!column_sym :=
+                                     cut(
+                                       feature,
+                                       breaks = c(A),
+                                       labels = c(B)
+                                     ))
+}
+
+
+discretize(hcv_data$WBC,"WBC",c(0, 4000, 11000, 12101),c(1, 2, 3))
