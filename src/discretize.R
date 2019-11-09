@@ -1,0 +1,12 @@
+# Load libraries
+library(dplyr)
+
+# Discretization
+hcv_data_dis <- data.table::copy(hcv_data)
+discretize <- function(data, column_name, A, B) {
+  column_sym <- rlang::sym(column_name)
+  hcv_data_dis <<- hcv_data_dis %>% mutate(!!column_sym :=
+                                             cut(data[[column_name]],
+                                                 breaks = c(A),
+                                                 labels = c(B)))
+}
