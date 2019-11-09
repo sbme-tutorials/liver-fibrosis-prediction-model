@@ -1,5 +1,5 @@
 # Load and inspect datset
-hcv_data <- read.csv("./dataset/HCV-Egy-Data.csv")
+hcv_data <- read.csv("./data/row/HCV-Egy-Data.csv")
 summary(hcv_data)
 head(hcv_data)
 colnames(hcv_data)
