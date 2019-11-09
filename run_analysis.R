@@ -43,3 +43,10 @@ hcv_data_dis[sapply(hcv_data_dis, is.numeric)] <-
 
 # Check types for each attribute
 sapply(hcv_data_dis, class)
+
+# List the levels for the class
+levels(hcv_data_dis$Baselinehistological.staging)
+
+# Summarize the Baselinehistological.staging class distribution
+percentage <- prop.table(table(hcv_data_dis$Baselinehistological.staging)) * 100
+cbind(freq=table(hcv_data_dis$Baselinehistological.staging), percentage=percentage)
