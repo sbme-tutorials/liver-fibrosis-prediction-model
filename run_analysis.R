@@ -40,3 +40,6 @@ write.table(hcv_data_dis, file = "./data/processed/hcv-data-dis.csv",
 # Converting numeric variables to factors
 hcv_data_dis[sapply(hcv_data_dis, is.numeric)] <-
   lapply(hcv_data_dis[sapply(hcv_data_dis, is.numeric)], as.factor)
+
+# Check types for each attribute
+sapply(hcv_data_dis, class)
