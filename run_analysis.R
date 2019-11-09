@@ -36,3 +36,7 @@ if (hcv_data$Gender == 1) {
 # Save discretized data
 write.table(hcv_data_dis, file = "./data/processed/hcv-data-dis.csv",
             sep = ",", row.names = F)
+
+# Converting numeric variables to factors
+hcv_data_dis[sapply(hcv_data_dis, is.numeric)] <-
+  lapply(hcv_data_dis[sapply(hcv_data_dis, is.numeric)], as.factor)
