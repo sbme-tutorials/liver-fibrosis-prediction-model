@@ -55,6 +55,6 @@ cbind(freq=table(hcv_data_dis$Baselinehistological.staging), percentage=percenta
 sum(is.na(hcv_data_dis))
 mean(is.na(hcv_data_dis))
 missing_values <- hcv_data_dis %>% dplyr::filter_all(any_vars(is.na(.)))
-
+hcv_data_dis <- na.omit(hcv_data_dis)
 
 
