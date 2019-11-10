@@ -50,3 +50,11 @@ levels(hcv_data_dis$Baselinehistological.staging)
 # Summarize the Baselinehistological.staging class distribution
 percentage <- prop.table(table(hcv_data_dis$Baselinehistological.staging)) * 100
 cbind(freq=table(hcv_data_dis$Baselinehistological.staging), percentage=percentage)
+
+# Missing Values
+sum(is.na(hcv_data_dis))
+mean(is.na(hcv_data_dis))
+missing_values <- hcv_data_dis %>% dplyr::filter_all(any_vars(is.na(.)))
+
+
+
