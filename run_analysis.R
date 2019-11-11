@@ -65,3 +65,7 @@ hcv_test <- hcv_data_dis[-ran,]
 # knn Model
 knn_model <- class::knn(hcv_train,hcv_test,cl=hcv_train$Baselinehistological.staging,k=10)
 
+# knn Model with cv
+indx <- sapply(hcv_data_dis, is.factor)
+hcv_data_dis[indx] <- lapply(hcv_data_dis[indx], function(x) as.numeric(as.character(x)))
+knn_cv_model <- FNN::knn.cv(hcv_data_dis[,-29],hcv_data_dis[,29],k=10)
