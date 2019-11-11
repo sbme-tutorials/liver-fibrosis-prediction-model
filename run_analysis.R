@@ -57,4 +57,7 @@ mean(is.na(hcv_data_dis))
 missing_values <- hcv_data_dis %>% dplyr::filter_all(any_vars(is.na(.)))
 hcv_data_dis <- na.omit(hcv_data_dis)
 
-
+# Splitting the model
+ran <- sample(1:nrow(hcv_data_dis), 0.8 * nrow(hcv_data_dis)) 
+hcv_train <- hcv_data_dis[ran,] 
+hcv_test <- hcv_data_dis[-ran,]
