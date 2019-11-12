@@ -1,6 +1,8 @@
 # Load and inspect datset
+install.packages("data.table")
 hcv_data <- read.csv("./data/raw/HCV-Egy-Data.csv")
 summary(hcv_data)
+
 head(hcv_data)
 colnames(hcv_data)
 
