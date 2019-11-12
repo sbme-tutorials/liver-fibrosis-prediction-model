@@ -28,8 +28,16 @@ for (i in 1:10) {
                hcv_test,
                cl = hcv_train$Baselinehistological.staging,
                k = 10)
-  print(mean(knn_model == hcv_test$Baselinehistological))
+
+# get the confusion matrix    
+ confusion_knn <- table(as.factor(knn_model) , as.factor(hcv_test$Baselinehistological))
+ predicted_true <- confusion_knn[1,1]+confusion_knn[2,2]+confusion_knn[3,3]+confusion_knn[4,4]
+confusion_acuur_knn <- predicted_true/sum(confusion_knn)
+print(paste("Accuracy=" , confusion_acuur_knn))
   knn_accuracy <-
-    knn_accuracy + mean(knn_model == hcv_test$Baselinehistological)
+    knn_accuracy + confusion_acuur_knn
 }
 accuracy <- knn_accuracy / 10
+print(paste("Average Acuuracy = ", accuracy))
+# get the confusion matrix 
+
