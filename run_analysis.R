@@ -1,7 +1,6 @@
 
 # Load and inspect datset
-hcv_data <- read.csv("./data/raw/HCV-Egy-Data.csv")
-summary(hcv_data)
+
 
 
 source("./src/discretize.R")
