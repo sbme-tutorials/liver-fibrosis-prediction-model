@@ -29,7 +29,7 @@ for (i in 1:10) {
                k = 10)
 
 # get the confusion matrix    
- confusion_knn <- table(as.factor(knn_model) , as.factor(hcv_test$Baselinehistological))
+ confusion_knn <- table(as.factor(knn_model) , as.factor(hcv_test$Baselinehistological.staging))
  #calculate accuracy 
  predicted_true <- confusion_knn[1,1]+confusion_knn[2,2]+confusion_knn[3,3]+confusion_knn[4,4]
 confusion_acuur_knn <- predicted_true/sum(confusion_knn)
@@ -86,12 +86,12 @@ for (i in 1:10) {
   hcv_train <- hcv_data_dis[-testIndexes,]
   #Use the test and train data partitions however you desire...
   
-naive_model <- naive_bayes(x= hcv_train, y=as.factor(hcv_train$Baselinehistological), laplace=1)
+naive_model <- naive_bayes(x= hcv_train, y=as.factor(hcv_train$Baselinehistological.staging), laplace=1)
 #naive_model <- naive_bayes(as.factor(hcv_train$Baselinehistological.staging) ~ ., data = hcv_train , laplace=1)
 naive_predicted <- predict(naive_model , hcv_test)
 
 # get the confusion matrix    
- confusion_naive <- table(as.factor(naive_predicted) , as.factor(hcv_test$Baselinehistological))
+ confusion_naive <- table(as.factor(naive_predicted) , as.factor(hcv_test$Baselinehistological.staging))
 
 # calculate SV  and  SP 
 T1 <- confusion_naive[1,1]
