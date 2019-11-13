@@ -1,0 +1,11 @@
+library(ggplot2)
+
+hcv_data <- read.csv("./data/raw/HCV-Egy-Data.csv")
+par(mfrow = c(3:2))
+boxplot(ALT.12~factor(Baselinehistological.staging) , data=hcv_data ,  xlab="Baseline.histological.Staging", ylab="ALT.12")
+boxplot(ALT.24~factor(Baselinehistological.staging) , data=hcv_data ,  xlab="Baseline.histological.Staging", ylab="ALT.24")
+boxplot(ALT.36~factor(Baselinehistological.staging) , data=hcv_data ,  xlab="Baseline.histological.Staging", ylab="ALT.36")
+boxplot(ALT.48~factor(Baselinehistological.staging) , data=hcv_data ,  xlab="Baseline.histological.Staging", ylab="ALT.48")
+boxplot(ALT.after.24.w~factor(Baselinehistological.staging) , data=hcv_data ,  xlab="Baseline.histological.Staging", ylab="ALT.after.24.w")
+boxplot(AST.1~factor(Baselinehistological.staging) , data=hcv_data ,  xlab="Baseline.histological.Staging", ylab="AST.1")
+boxplot(ALT4~factor(Baselinehistological.staging) , data=hcv_data ,  xlab="Baseline.histological.Staging", ylab="ALT4")
