@@ -30,8 +30,45 @@ for (i in 1:10) {
 
 # get the confusion matrix    
  confusion_knn <- table(as.factor(knn_model) , as.factor(hcv_test$Baselinehistological))
+ #calculate accuracy 
  predicted_true <- confusion_knn[1,1]+confusion_knn[2,2]+confusion_knn[3,3]+confusion_knn[4,4]
 confusion_acuur_knn <- predicted_true/sum(confusion_knn)
+#calculate SP and SV
+T1 <- confusion_knn[1,1]
+T2 <- confusion_knn[2,2]
+T3 <- confusion_knn[3,3]
+T4 <- confusion_knn[4,4]
+
+F1 <-  sum(confusion_knn[1,2:4])
+F2 <- confusion_knn[2,1] + confusion_knn[2,3] + confusion_knn[2,4]
+F3 <- confusion_knn[3,1] +  confusion_knn[3,2] + confusion_knn[3,4]
+F4 <- confusion_knn[4,1] +  confusion_knn[4,2] + confusion_knn[4,3]
+
+F1_n <-  confusion_knn[2,1] + confusion_knn[3,1] +  confusion_knn[4,1]
+F2_n <- confusion_knn[1,2] + confusion_knn[3,2] +  confusion_knn[4,2]
+F3_n <- confusion_knn[1,3] + confusion_knn[2,3] +  confusion_knn[4,3]
+F4_n <- confusion_knn[1,4] + confusion_knn[3,4] +  confusion_knn[2,4]
+
+T1_n <- confusion_knn[2,2]+confusion_knn[3,3]+confusion_knn[4,4]
+T2_n <- confusion_knn[1,1]+confusion_knn[3,3]+confusion_knn[4,4]
+T3_n<- confusion_knn[1,1]+confusion_knn[2,2]+confusion_knn[4,4]
+T4_n <- confusion_knn[1,1]+confusion_knn[2,2]+confusion_knn[3,3]
+
+# for class 1 
+SV1 = T1/(T1+F1_n)
+SP1 = T1_n/(T1_n+F1)
+# for class 2
+SV2 = T2/(T2+F2_n)
+SP2 = T2_n/(T2_n+F2)
+# for class 3 
+SV3 = T3/(T3+F3_n)
+SP3 = T3_n/(T3_n+F3)
+# for class 4 
+SV4 = T4/(T4+F4_n)
+SP4 = T4_n/(T4_n+F4)
+print(SP1)
+print(SV1)
+
 print(paste("Accuracy=" , confusion_acuur_knn))
   knn_accuracy <-
     knn_accuracy + confusion_acuur_knn
@@ -55,7 +92,44 @@ naive_predicted <- predict(naive_model , hcv_test)
 
 # get the confusion matrix    
  confusion_naive <- table(as.factor(naive_predicted) , as.factor(hcv_test$Baselinehistological))
- confusion_naive
+
+# calculate SV  and  SP 
+T1 <- confusion_naive[1,1]
+T2 <- confusion_naive[2,2]
+T3 <- confusion_naive[3,3]
+T4 <- confusion_naive[4,4]
+
+F1 <-  sum(confusion_naive[1,2:4])
+F2 <- confusion_naive[2,1] + confusion_naive[2,3] + confusion_naive[2,4]
+F3 <- confusion_naive[3,1] +  confusion_naive[3,2] + confusion_naive[3,4]
+F4 <- confusion_naive[4,1] +  confusion_naive[4,2] + confusion_naive[4,3]
+
+F1_n <-  confusion_naive[2,1] + confusion_naive[3,1] +  confusion_naive[4,1]
+F2_n <- confusion_naive[1,2] + confusion_naive[3,2] +  confusion_naive[4,2]
+F3_n <- confusion_naive[1,3] + confusion_naive[2,3] +  confusion_naive[4,3]
+F4_n <- confusion_naive[1,4] + confusion_naive[3,4] +  confusion_naive[2,4]
+
+T1_n <- confusion_naive[2,2]+confusion_naive[3,3]+confusion_naive[4,4]
+T2_n <- confusion_naive[1,1]+confusion_naive[3,3]+confusion_naive[4,4]
+T3_n<- confusion_naive[1,1]+confusion_naive[2,2]+confusion_naive[4,4]
+T4_n <- confusion_naive[1,1]+confusion_naive[2,2]+confusion_naive[3,3]
+
+# for class 1 
+SV1 = T1/(T1+F1_n)
+SP1 = T1_n/(T1_n+F1)
+# for class 2
+SV2 = T2/(T2+F2_n)
+SP2 = T2_n/(T2_n+F2)
+# for class 3 
+SV3 = T3/(T3+F3_n)
+SP3 = T3_n/(T3_n+F3)
+# for class 4 
+SV4 = T4/(T4+F4_n)
+SP4 = T4_n/(T4_n+F4)
+print(SP1)
+print(SV1)
+
+# calculate accuracy 
  predicted_true <- confusion_naive[1,1]+confusion_naive[2,2]+confusion_naive[3,3]+confusion_naive[4,4]
 confusion_acuur_naive <- predicted_true/sum(confusion_naive)
 print(paste("Accuracy=" , confusion_acuur_naive))
