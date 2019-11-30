@@ -1,10 +1,5 @@
-
-# Load and inspect datset
-
-
-
 source("./src/discretize.R")
-source("./src/split.R")
+source("./src/models2.R")
 
 
 

@@ -1,10 +1,9 @@
 # Load and inspect datset
 hcv_data <- read.csv("./data/raw/HCV-Egy-Data.csv")
 colnames(hcv_data)
-summary(hcv_data)
 head(hcv_data)
-colnames(hcv_data)
 
+# General Discretization function
 hcv_data_dis <- data.table::copy(hcv_data)
 discretize <- function(data, column_name, A, B) {
   column_sym <- rlang::sym(column_name)
@@ -15,7 +14,7 @@ discretize <- function(data, column_name, A, B) {
 }
 
 
-# Discretization
+# Discretize calls
 discretize(hcv_data, "WBC", c(0, 4000, 11000, 12101), c(1, 2, 3))
 discretize(hcv_data,
            "Age",
