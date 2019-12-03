@@ -29,7 +29,7 @@ for (i in 1:10) {
                k = 10)
   # Get Accuracy
   accuracy <- confusion_matrix(knn_model,hcv_test$Baselinehistological.staging)
-  total__accuracy <-
+  total_accuracy <-
     total_accuracy + accuracy
 }
 print(paste("Average Acuuracy of knn = ", total_accuracy / 10))
