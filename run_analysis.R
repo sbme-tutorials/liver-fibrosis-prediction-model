@@ -1,6 +1,6 @@
 source("./src/discretize.R")
-source("./src/models2.R")
-
+source("./src/knn.R")
+source("./src/naive_bayes.R")
 
 
 

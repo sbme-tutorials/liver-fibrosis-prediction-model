@@ -48,5 +48,6 @@ confusion_matrix <- function(prediction,true){
   print(SV1)
   
   print(paste("Accuracy=" , accuracy))
+  # write.table(cm, file="./mymatrix.txt", row.names=FALSE, col.names=FALSE)
   return(accuracy)
 }
