@@ -1,5 +1,5 @@
 library(ggplot2)
-
+library(praznik)
 hcv_data <- read.csv("./data/raw/HCV-Egy-Data.csv")
 par(mfrow = c(3:2))
 boxplot(ALT.12~factor(Baselinehistological.staging) , data=hcv_data ,  xlab="Baseline.histological.Staging", ylab="ALT.12")
@@ -13,3 +13,17 @@ boxplot(ALT4~factor(Baselinehistological.staging) , data=hcv_data ,  xlab="Basel
 # Summarize the Baselinehistological.staging class distribution
 percentage <- prop.table(table(hcv_data$Baselinehistological.staging)) * 100
 cbind(freq=table(hcv_data$Baselinehistological.staging), percentage=percentage)
+
+
+#First Feature Selection 
+data_set <- read.csv("./data/processed/hcv-data-dis.csv")
+
+
+F_test <- MRMR(data_set[-29] , data_set$Baselinehistological.staging , 28)
+max(F_test$score)
+which(F_test$score == max(F_test$score), arr.ind = TRUE)
+
+# Second feature selection by deleting the first selected 
+F_test <- MRMR(data_set[-29][-28] , data_set$Baselinehistological.staging , 27)
+max(F_test$score)
+which(F_test$score == max(F_test$score), arr.ind = TRUE)
