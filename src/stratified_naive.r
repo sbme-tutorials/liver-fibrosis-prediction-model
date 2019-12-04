@@ -17,6 +17,7 @@ createFolds <- function(x,k){
 
 str_data <- ddply(hcv_data_dis,.(hcv_data_dis$Baselinehistological.staging),createFolds,k = 10 )
 # Naive bayes model
+total_micro_accuracy <- 0
 total_accuracy <- 0
 for (i in 1:10) {
   testIndexes <- which(str_data$folds == i, arr.ind = TRUE)
@@ -29,11 +30,12 @@ for (i in 1:10) {
       laplace = 1
     )
   naive_predicted <- predict(naive_model , hcv_test)
-  accuracy <- confusion_matrix(naive_predicted,hcv_test$Baselinehistological.staging)
+  acc <- confusion_matrix(naive_predicted,hcv_test$Baselinehistological.staging)
   total_accuracy <-
-    total_accuracy + accuracy
-    print("------------------------------------------------------------")
+    total_accuracy + acc[1]
+  total_micro_accuracy <-    total_micro_accuracy + acc[2]
 }
-print(paste("Average Acuuracy of naive = ", total_accuracy / 10))
+print(paste("Average Acuuracy of knn = ", total_accuracy / 10))
+print(paste("Average Micro Acuuracy of knn = ", total_micro_accuracy / 10))
 # warnings()
 

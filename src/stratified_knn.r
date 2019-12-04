@@ -28,10 +28,12 @@ for (i in 1:10) {
     class::knn(hcv_train,
                hcv_test,
                cl = hcv_train$Baselinehistological.staging,
-               k = 10)
+               k = 37)
   # Get Accuracy
-  accuracy <- confusion_matrix(knn_model,hcv_test$Baselinehistological.staging)
+  acc <- confusion_matrix(knn_model,hcv_test$Baselinehistological.staging)
   total_accuracy <-
-    total_accuracy + accuracy
+    total_accuracy + acc[1]
+  total_micro_accuracy <-    total_accuracy + acc[2]
 }
 print(paste("Average Acuuracy of knn = ", total_accuracy / 10))
+print(paste("Average Micro Acuuracy of knn = ", total_micro_accuracy / 10))

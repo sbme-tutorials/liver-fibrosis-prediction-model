@@ -67,5 +67,6 @@ confusion_matrix <- function(prediction,true){
   
   print(paste("Macro_average_Accuracy=" , accuracy))
   # write.table(cm, file="./mymatrix.txt", row.names=FALSE, col.names=FALSE)
-  return(accuracy)
+  acc <- c(accuracy , micro_accuracy)
+  return(acc)
 }

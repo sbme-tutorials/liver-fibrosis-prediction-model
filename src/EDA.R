@@ -29,28 +29,34 @@ max(F_test$score)
 which(F_test$score == max(F_test$score), arr.ind = TRUE)
 
 #Upon Results the 2 features selected are Baseline.histological.Grading and Age 
-qplot(Baseline.histological.Grading, Age, data=data_set, color=as.factor(Baselinehistological.staging))
-
-
-
-
-#First Feature Selection 
-
-F_test <- MRMR(hcv_data[-29] , hcv_data$Baselinehistological.staging , 28)
-max(F_test$score)
-which(F_test$score == max(F_test$score), arr.ind = TRUE)
-
-# Second feature selection by deleting the first selected 
-F_test <- MRMR(hcv_data[-29][-23] , hcv_data$Baselinehistological.staging , 27)
-max(F_test$score)
-which(F_test$score == max(F_test$score), arr.ind = TRUE)
-
-#Upon Results the 2 features selected are Baseline.histological.Grading and Age 
-qplot(RNA.Base , RNA.4 , data=hcv_data, color=as.factor(Baselinehistological.staging))
-qplot(Baseline.histological.Grading, Age, data=hcv_data, color=as.factor(Baselinehistological.staging))
-ggplot(hcv_data, aes(x=Baseline.histological.Grading, y=Age))+
-  geom_point()+
+Staging <- as.factor(data_set$Baselinehistological.staging)
+  ggplot(data_set, aes(x=Baseline.histological.Grading, y=Age , color= Staging))+
+  geom_jitter(width=0.25 , alpha= 0.5)
+ 
+# qplot(Baseline.histological.Grading, Age, data=data_set, color=as.factor(Baselinehistological.staging))
+  ggplot(data_set, aes(x=Baseline.histological.Grading, y=Age))+
+  geom_jitter(width=0.25 , alpha = 0.5)+
   facet_wrap(~Baselinehistological.staging)
-  ggplot(hcv_data, aes(x=RNA.Base, y=RNA.4))+
-  geom_point()+
-  facet_wrap(~Baselinehistological.staging)
+
+
+
+# #First Feature Selection 
+
+# F_test <- MRMR(hcv_data[-29] , hcv_data$Baselinehistological.staging , 28)
+# max(F_test$score)
+# which(F_test$score == max(F_test$score), arr.ind = TRUE)
+
+# # Second feature selection by deleting the first selected 
+# F_test <- MRMR(hcv_data[-29][-23] , hcv_data$Baselinehistological.staging , 27)
+# max(F_test$score)
+# which(F_test$score == max(F_test$score), arr.ind = TRUE)
+
+# #Upon Results the 2 features selected are Baseline.histological.Grading and Age 
+# qplot(RNA.Base , RNA.4 , data=hcv_data, color=as.factor(Baselinehistological.staging))
+# qplot(Baseline.histological.Grading, Age, data=hcv_data, color=as.factor(Baselinehistological.staging))
+# ggplot(hcv_data, aes(x=Baseline.histological.Grading, y=Age))+
+#   geom_point()+
+#   facet_wrap(~Baselinehistological.staging)
+#   ggplot(hcv_data, aes(x=RNA.Base, y=RNA.4))+
+#   geom_point()+
+#   facet_wrap(~Baselinehistological.staging)
