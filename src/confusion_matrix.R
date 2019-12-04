@@ -7,6 +7,8 @@ confusion_matrix <- function(prediction,true){
   predicted_true <-
     cm[1, 1] + cm[2, 2] + cm[3, 3] + cm[4, 4]
   accuracy <- predicted_true / sum(cm)
+  
+  # Macro-average analysis 
   #calculate SP and SV
   T1 <- cm[1, 1]
   T2 <- cm[2, 2]
@@ -31,7 +33,23 @@ confusion_matrix <- function(prediction,true){
   T2_n <- cm[1, 1] + cm[3, 3] + cm[4, 4]
   T3_n <- cm[1, 1] + cm[2, 2] + cm[4, 4]
   T4_n <- cm[1, 1] + cm[2, 2] + cm[3, 3]
-  
+
+
+  #mico-average analysis 
+  C1 <- cbind(c(T1 , F1_n),c(F1 , T1_n))
+  C2 <- cbind(c(T2 , F2_n),c(F2 , T2_n))
+  C3 <- cbind(c(T3 , F3_n),c(F3 , T3_n))
+  C4 <- cbind(c(T4 , F4_n),c(F4 , T4_n))
+  micro_confusion <- C1+C2+C3+C4
+  micro_accuracy <- (micro_confusion[1,1]+micro_confusion[2,2])/sum(micro_confusion)
+  micro_sv <- micro_confusion[1,1]/(micro_confusion[1,1]+micro_confusion[2,1])
+  micro_sp <-micro_confusion[2,2]/(micro_confusion[2,2]+micro_confusion[1,2])
+
+  print(paste("micro_accuracy" , micro_accuracy))
+  print(paste("micro_sv" ,  micro_sv))
+  print(paste("micro_sp" , micro_sp))
+
+  print("Macro_Analysis for class 1")
   # for class 1
   SV1 = T1 / (T1 + F1_n)
   SP1 = T1_n / (T1_n + F1)
@@ -44,10 +62,10 @@ confusion_matrix <- function(prediction,true){
   # for class 4
   SV4 = T4 / (T4 + F4_n)
   SP4 = T4_n / (T4_n + F4)
-  print(SP1)
-  print(SV1)
+  print(paste("SP1",SP1))
+  print(paste("SV1",SV1))
   
-  print(paste("Accuracy=" , accuracy))
+  print(paste("Macro_average_Accuracy=" , accuracy))
   # write.table(cm, file="./mymatrix.txt", row.names=FALSE, col.names=FALSE)
   return(accuracy)
 }

@@ -30,6 +30,7 @@ for (i in 1:10) {
   accuracy <- confusion_matrix(naive_predicted,hcv_test$Baselinehistological.staging)
   total_accuracy <-
     total_accuracy + accuracy
+    print("------------------------------------------------------------")
 }
 print(paste("Average Acuuracy of naive = ", total_accuracy / 10))
 # warnings()
