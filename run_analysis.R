@@ -1,6 +1,9 @@
 # To perform discretization run
 source("./src/discretize.R")
 
+# For EDA plots run
+source("./src/EDA.R")
+
 # To fit knn model with cross validation run
 source("./src/knn.R")
 
