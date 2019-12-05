@@ -1,4 +1,4 @@
-<h1> SBME 2021, team 15 final project</h1>
+<h1> Liver Fibrosis Prediction Model</h1>
 
 **File Breakdown:**
 
@@ -10,4 +10,5 @@
 - `naive_bayes.R`: Naive Bayes model with cross validation (k-folds = 10)
 - `stratified_naive.R`: Naive Bayes model with stratified k-folds.
 
+This project is done as a requirement for SBE304 course.
 Please refer to [this link](https://github.com/aligamalelgaml/Team15) to view the repo for our [website](https://aligamalelgaml.github.io/Team15/).
